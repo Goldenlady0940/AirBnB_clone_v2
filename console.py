@@ -37,6 +37,7 @@ class HBNBCommand(cmd.Cmd):
 
     def precmd(self, line):
         """Reformat command line for advanced command syntax.
+
         Usage: <class name>.<command>([<id> [<*args> or <**kwargs>]])
         (Brackets denote optional fields in usage example.)
         """
@@ -125,7 +126,7 @@ class HBNBCommand(cmd.Cmd):
                 if "=" not in params:
                     continue
                 key, value = params.split("=")
-[O                value = eval(value)
+                value = eval(value)
                 if type(value) not in {int, float, str}:
                     continue
                 if type(value) == str:
